@@ -447,6 +447,9 @@ html {
   .gallery-container .box.blank-box .image-container {
     height: 400px;
   }
+  .gallery-container .box.full-blank {
+    display: none;
+  }
 }
 
 @media (max-width: 450px) {
