@@ -312,6 +312,35 @@ html {
   color: #ffffff;
 }
 
+/* modal  */
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.modal-wrapper.hidden {
+  display: none;
+}
+
+.modal-wrapper .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-wrapper .image-container .spinner-img {
+  height: 70px;
+  margin-top: 30px !important;
+}
+
 /* responsive  */
 
 @media (max-width: 1500px) {
