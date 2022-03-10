@@ -17,6 +17,7 @@
       href="https://cdn.jsdelivr.net/gh/sanjaya007/flex-library@master/dist/css/sanjaya.min.css"
       crossorigin="anonymous"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/home.css" />
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -81,10 +82,25 @@
         </div>
         <img src="./assets/images/plus.png" alt="plus" />
       </div>
+      <div class="head-vector head-vector-ball"></div>
+      <div class="head-vector head-vector-square"></div>
+      <div class="head-vector head-vector-circle"></div>
+      <div class="head-vector head-vector-plus"></div>
+      <div class="head-vector head-vector-image-first">
+        <img src="./assets/images/plus.png" alt="plus" />
+      </div>
+      <div class="head-vector head-vector-image-second">
+        <img src="./assets/images/plus.png" alt="plus" />
+      </div>
     </div>
 
     <!-- experience-container -->
-    <div class="experience-container content-container">
+    <div
+      class="experience-container content-container"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      >
       <div class="title mb-4">
         <h1>
           Interactive <span> AR Experience </span> <br />
@@ -99,7 +115,7 @@
         </p>
       </div>
       <div class="box-row flex-css-row-wrap pt-4">
-        <div class="box flex-css-column">
+        <div class="box flex-css-column" data-aos="fade-right">
           <div class="img-container flex-css mb-3">
             <img src="./assets/images/icon1.png" alt="icon" />
           </div>
@@ -108,7 +124,7 @@
             effects around you.
           </p>
         </div>
-        <div class="box flex-css-column">
+        <div class="box flex-css-column" data-aos="fade-up">
           <div class="img-container mb-3">
             <img src="./assets/images/icon2.png" alt="icon" />
           </div>
@@ -117,7 +133,7 @@
             effects around you.
           </p>
         </div>
-        <div class="box flex-css-column">
+        <div class="box flex-css-column" data-aos="fade-left">
           <div class="img-container mb-3">
             <img src="./assets/images/icon3.png" alt="icon" />
           </div>
@@ -127,17 +143,29 @@
           </p>
         </div>
       </div>
+      <div class="exp-vector exp-vector-dot"></div>
+      <div class="exp-vector exp-vector-square"></div>
+      <div class="exp-vector exp-vector-circle"></div>
+      <div class="exp-vector exp-vector-plus"></div>
     </div>
 
     <!-- first banner  -->
-    <div class="banner-container first-banner">
+    <div
+      class="banner-container first-banner"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div class="image-container">
         <img src="./assets/images/banner1.png" alt="banner" />
       </div>
     </div>
 
     <!-- about container  -->
-    <div class="about-container content-container flex-css-row">
+    <div
+      class="about-container content-container flex-css-row"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div class="row">
         <div class="col-md-5 image-wrapper">
           <div class="image-container">
@@ -169,17 +197,29 @@
           </div>
         </div>
       </div>
+      <div class="about-vector about-vector-dot"></div>
+      <div class="about-vector about-vector-square"></div>
+      <div class="about-vector about-vector-circle"></div>
+      <div class="about-vector about-vector-plus"></div>
     </div>
 
     <!-- second banner  -->
-    <div class="banner-container second-banner">
+    <div
+      class="banner-container second-banner"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div class="image-container">
         <img src="./assets/images/banner2.png" alt="banner" />
       </div>
     </div>
 
     <!-- partner container  -->
-    <div class="partner-container content-container">
+    <div
+      class="partner-container content-container"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div class="title mb-4">
         <h1>Our Partners</h1>
       </div>
@@ -198,10 +238,20 @@
         <img src="./assets/images/microsoft.png" alt="partner" />
       </div>
       <hr />
+      <div class="partner-vector partner-vector-plus-one">
+        <img src="./assets/images/plus.png" alt="plus" />
+      </div>
+      <div class="partner-vector partner-vector-plus-two">
+        <img src="./assets/images/plus.png" alt="plus" />
+      </div>
     </div>
 
     <!-- team container  -->
-    <div class="team-container content-container flex-top-row-sb">
+    <div
+      class="team-container content-container flex-top-row-sb"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div class="left-team">
         <div class="title mb-3">
           <h1>
@@ -271,7 +321,7 @@
     <div class="modal-wrapper">
       <div class="modal-box">
         <div class="image-container">
-          <img src="./assets/images/logo.png" class="logo-img" alt="logo" />
+          <p>Loading</p>
           <img
             src="./assets/images/spinner1.gif"
             class="spinner-img"
@@ -282,5 +332,10 @@
     </div>
 
     <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/home_animation.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
