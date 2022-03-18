@@ -5,213 +5,182 @@ $(window).on("load", function () {
     window.webkitRequestAnimationFrame ||
     window.msRequestAnimationFrame;
 
-  // head vector
-  const headBox = document.querySelector(".head-banner");
-
-  const headVectorDot = document.querySelector(".head-vector-dot");
-  const headVectorPlus = document.querySelector(".head-vector-plus");
-  const headVectorCircle = document.querySelector(".head-vector-circle");
-  const headVectorSquare = document.querySelector(".head-vector-square");
-
-  let headBoxWidth = headBox.getBoundingClientRect().width;
-  let headBoxHeight = headBox.getBoundingClientRect().height;
-
-  // dot
-  let headVectorDotSpeedX = 1;
-  let headVectorDotSpeedY = 1;
-  let headVectorDotPositionX = 0;
-  let headVectorDotPositionY = 0;
-
-  function moveHeadVectorDot() {
-    headVectorDotPositionX += headVectorDotSpeedX;
-    headVectorDotPositionY += headVectorDotSpeedY;
-
-    if (headVectorDotPositionX >= headBoxWidth || headVectorDotPositionX <= 0) {
-      headVectorDotSpeedX *= -1;
-    }
-
-    if (
-      headVectorDotPositionY >= headBoxHeight ||
-      headVectorDotPositionY <= 0
-    ) {
-      headVectorDotSpeedY *= -1;
-    }
-
-    headVectorDot.style.left = headVectorDotPositionX + "px";
-    headVectorDot.style.top = headVectorDotPositionY + "px";
-
-    requestAnimationFrame(moveHeadVectorDot);
-  }
-  moveHeadVectorDot();
-
-  // plus
-  let headVectorPlusSpeedX = 0.5;
-  let headVectorPlusSpeedY = 0.5;
-  let headVectorPlusPositionX = headBoxWidth;
-  let headVectorPlusPositionY = headBoxHeight;
-
-  function moveHeadVectorPlus() {
-    headVectorPlusPositionX -= headVectorPlusSpeedX;
-    headVectorPlusPositionY -= headVectorPlusSpeedY;
-
-    if (
-      headVectorPlusPositionX >= headBoxWidth ||
-      headVectorPlusPositionX <= 0
-    ) {
-      headVectorPlusSpeedX *= -1;
-    }
-
-    if (
-      headVectorPlusPositionY >= headBoxHeight ||
-      headVectorPlusPositionY <= 0
-    ) {
-      headVectorPlusSpeedY *= -1;
-    }
-
-    headVectorPlus.style.left = headVectorPlusPositionX + "px";
-    headVectorPlus.style.top = headVectorPlusPositionY + "px";
-
-    requestAnimationFrame(moveHeadVectorPlus);
-  }
-  moveHeadVectorPlus();
-
-  // circle
-  let headVectorCircleSpeedX = 0.7;
-  let headVectorCircleSpeedY = 0.7;
-  let headVectorCirclePositionX = headBoxWidth / 2;
-  let headVectorCirclePositionY = headBoxHeight / 2;
-
-  function moveHeadVectorCircle() {
-    headVectorCirclePositionX -= headVectorCircleSpeedX;
-    headVectorCirclePositionY -= headVectorCircleSpeedY;
-
-    if (
-      headVectorCirclePositionX >= headBoxWidth ||
-      headVectorCirclePositionX <= 0
-    ) {
-      headVectorCircleSpeedX *= -1;
-    }
-
-    if (
-      headVectorCirclePositionY >= headBoxHeight ||
-      headVectorCirclePositionY <= 0
-    ) {
-      headVectorCircleSpeedY *= -1;
-    }
-
-    headVectorCircle.style.left = headVectorCirclePositionX + "px";
-    headVectorCircle.style.top = headVectorCirclePositionY + "px";
-
-    requestAnimationFrame(moveHeadVectorCircle);
-  }
-  moveHeadVectorCircle();
-
-  // square
-  let headVectorSquareSpeedX = 0.4;
-  let headVectorSquareSpeedY = 0.4;
-  let headVectorSquarePositionX = headBoxWidth / 2;
-  let headVectorSquarePositionY = headBoxHeight / 2;
-
-  function moveHeadVectorSquare() {
-    headVectorSquarePositionX += headVectorSquareSpeedX;
-    headVectorSquarePositionY += headVectorSquareSpeedY;
-
-    if (
-      headVectorSquarePositionX >= headBoxWidth ||
-      headVectorSquarePositionX <= 0
-    ) {
-      headVectorSquareSpeedX *= -1;
-    }
-
-    if (
-      headVectorSquarePositionY >= headBoxHeight ||
-      headVectorSquarePositionY <= 0
-    ) {
-      headVectorSquareSpeedY *= -1;
-    }
-
-    headVectorSquare.style.left = headVectorSquarePositionX + "px";
-    headVectorSquare.style.top = headVectorSquarePositionY + "px";
-
-    requestAnimationFrame(moveHeadVectorSquare);
-  }
-  moveHeadVectorSquare();
-
-  //   ---------------------------------------------------------------------
-
   // partner vector
   const partnerBox = document.querySelector(".partner-container");
 
-  const partnerVectorPlusFirst = document.querySelector(
-    ".partner-vector-plus-one"
+  const partnerVectorCubeFirst = document.querySelector(
+    ".partner-vector-cube-first"
   );
-  const partnerVectorPlusSecond = document.querySelector(
-    ".partner-vector-plus-two"
+  const partnerVectorCubeSecond = document.querySelector(
+    ".partner-vector-cube-second"
+  );
+  const partnerVectorCubeThird = document.querySelector(
+    ".partner-vector-cube-third"
+  );
+  const partnerVectorCubeFourth = document.querySelector(
+    ".partner-vector-cube-fourth"
+  );
+  const partnerVectorCubeFifth = document.querySelector(
+    ".partner-vector-cube-fifth"
   );
 
   let partnerBoxWidth = partnerBox.getBoundingClientRect().width;
   let partnerBoxHeight = partnerBox.getBoundingClientRect().height;
 
-  // plus first
-  let partnerVectorPlusFirstSpeedX = 0.5;
-  let partnerVectorPlusFirstSpeedY = 0.5;
-  let partnerVectorPlusFirstPositionX = 0;
-  let partnerVectorPlusFirstPositionY = 0;
+  // cube first
+  let partnerVectorCubeFirstSpeedX = 0.3;
+  let partnerVectorCubeFirstSpeedY = 0.3;
+  let partnerVectorCubeFirstPositionX = 0;
+  let partnerVectorCubeFirstPositionY = 0;
 
-  function movePartnerVectorPlusFirst() {
-    partnerVectorPlusFirstPositionX += partnerVectorPlusFirstSpeedX;
-    partnerVectorPlusFirstPositionY += partnerVectorPlusFirstSpeedY;
+  function movePartnerVectorCubeFirst() {
+    partnerVectorCubeFirstPositionX += partnerVectorCubeFirstSpeedX;
+    partnerVectorCubeFirstPositionY += partnerVectorCubeFirstSpeedY;
 
     if (
-      partnerVectorPlusFirstPositionX >= partnerBoxWidth ||
-      partnerVectorPlusFirstPositionX <= 0
+      partnerVectorCubeFirstPositionX >= partnerBoxWidth ||
+      partnerVectorCubeFirstPositionX <= 0
     ) {
-      partnerVectorPlusFirstSpeedX *= -1;
+      partnerVectorCubeFirstSpeedX *= -1;
     }
 
     if (
-      partnerVectorPlusFirstPositionY >= partnerBoxHeight ||
-      partnerVectorPlusFirstPositionY <= 0
+      partnerVectorCubeFirstPositionY >= partnerBoxHeight ||
+      partnerVectorCubeFirstPositionY <= 0
     ) {
-      partnerVectorPlusFirstSpeedY *= -1;
+      partnerVectorCubeFirstSpeedY *= -1;
     }
 
-    partnerVectorPlusFirst.style.left = partnerVectorPlusFirstPositionX + "px";
-    partnerVectorPlusFirst.style.top = partnerVectorPlusFirstPositionY + "px";
+    partnerVectorCubeFirst.style.left = partnerVectorCubeFirstPositionX + "px";
+    partnerVectorCubeFirst.style.top = partnerVectorCubeFirstPositionY + "px";
 
-    requestAnimationFrame(movePartnerVectorPlusFirst);
+    requestAnimationFrame(movePartnerVectorCubeFirst);
   }
-  movePartnerVectorPlusFirst();
+  movePartnerVectorCubeFirst();
 
-  // plus second
-  let partnerVectorPlusSecondSpeedX = 0.5;
-  let partnerVectorPlusSecondSpeedY = 0.5;
-  let partnerVectorPlusSecondPositionX = partnerBoxWidth;
-  let partnerVectorPlusSecondPositionY = partnerBoxHeight;
+  // Cube second
+  let partnerVectorCubeSecondSpeedX = 0.4;
+  let partnerVectorCubeSecondSpeedY = 0.4;
+  let partnerVectorCubeSecondPositionX = partnerBoxWidth - 1;
+  let partnerVectorCubeSecondPositionY = 0;
 
-  function movePartnerVectorPlusSecond() {
-    partnerVectorPlusSecondPositionX -= partnerVectorPlusSecondSpeedX;
-    partnerVectorPlusSecondPositionY -= partnerVectorPlusSecondSpeedY;
+  function movePartnerVectorCubeSecond() {
+    partnerVectorCubeSecondPositionX += partnerVectorCubeSecondSpeedX;
+    partnerVectorCubeSecondPositionY += partnerVectorCubeSecondSpeedY;
 
     if (
-      partnerVectorPlusSecondPositionX >= partnerBoxWidth ||
-      partnerVectorPlusSecondPositionX <= 0
+      partnerVectorCubeSecondPositionX >= partnerBoxWidth ||
+      partnerVectorCubeSecondPositionX <= 0
     ) {
-      partnerVectorPlusSecondSpeedX *= -1;
+      partnerVectorCubeSecondSpeedX *= -1;
     }
 
     if (
-      partnerVectorPlusSecondPositionY >= partnerBoxHeight ||
-      partnerVectorPlusSecondPositionY <= 0
+      partnerVectorCubeSecondPositionY >= partnerBoxHeight ||
+      partnerVectorCubeSecondPositionY <= 0
     ) {
-      partnerVectorPlusSecondSpeedY *= -1;
+      partnerVectorCubeSecondSpeedY *= -1;
     }
 
-    partnerVectorPlusSecond.style.left =
-      partnerVectorPlusSecondPositionX + "px";
-    partnerVectorPlusSecond.style.top = partnerVectorPlusSecondPositionY + "px";
+    partnerVectorCubeSecond.style.left =
+      partnerVectorCubeSecondPositionX + "px";
+    partnerVectorCubeSecond.style.top = partnerVectorCubeSecondPositionY + "px";
 
-    requestAnimationFrame(movePartnerVectorPlusSecond);
+    requestAnimationFrame(movePartnerVectorCubeSecond);
   }
-  movePartnerVectorPlusSecond();
+  movePartnerVectorCubeSecond();
+
+  // Cube Third
+  let partnerVectorCubeThirdSpeedX = 0.5;
+  let partnerVectorCubeThirdSpeedY = 0.5;
+  let partnerVectorCubeThirdPositionX = partnerBoxWidth / 1.5;
+  let partnerVectorCubeThirdPositionY = partnerBoxHeight - 1;
+
+  function movePartnerVectorCubeThird() {
+    partnerVectorCubeThirdPositionX -= partnerVectorCubeThirdSpeedX;
+    partnerVectorCubeThirdPositionY -= partnerVectorCubeThirdSpeedY;
+
+    if (
+      partnerVectorCubeThirdPositionX >= partnerBoxWidth ||
+      partnerVectorCubeThirdPositionX <= 0
+    ) {
+      partnerVectorCubeThirdSpeedX *= -1;
+    }
+
+    if (
+      partnerVectorCubeThirdPositionY >= partnerBoxHeight ||
+      partnerVectorCubeThirdPositionY <= 0
+    ) {
+      partnerVectorCubeThirdSpeedY *= -1;
+    }
+
+    partnerVectorCubeThird.style.left = partnerVectorCubeThirdPositionX + "px";
+    partnerVectorCubeThird.style.top = partnerVectorCubeThirdPositionY + "px";
+
+    requestAnimationFrame(movePartnerVectorCubeThird);
+  }
+  movePartnerVectorCubeThird();
+
+  // Cube Fourth
+  let partnerVectorCubeFourthSpeedX = 0.6;
+  let partnerVectorCubeFourthSpeedY = 0.6;
+  let partnerVectorCubeFourthPositionX = partnerBoxWidth / 2.5;
+  let partnerVectorCubeFourthPositionY = 0;
+
+  function movePartnerVectorCubeFourth() {
+    partnerVectorCubeFourthPositionX += partnerVectorCubeFourthSpeedX;
+    partnerVectorCubeFourthPositionY += partnerVectorCubeFourthSpeedY;
+
+    if (
+      partnerVectorCubeFourthPositionX >= partnerBoxWidth ||
+      partnerVectorCubeFourthPositionX <= 0
+    ) {
+      partnerVectorCubeFourthSpeedX *= -1;
+    }
+
+    if (
+      partnerVectorCubeFourthPositionY >= partnerBoxHeight ||
+      partnerVectorCubeFourthPositionY <= 0
+    ) {
+      partnerVectorCubeFourthSpeedY *= -1;
+    }
+
+    partnerVectorCubeFourth.style.left =
+      partnerVectorCubeFourthPositionX + "px";
+    partnerVectorCubeFourth.style.top = partnerVectorCubeFourthPositionY + "px";
+
+    requestAnimationFrame(movePartnerVectorCubeFourth);
+  }
+  movePartnerVectorCubeFourth();
+
+  // Cube Fifth
+  let partnerVectorCubeFifthSpeedX = 0.7;
+  let partnerVectorCubeFifthSpeedY = 0.7;
+  let partnerVectorCubeFifthPositionX = partnerBoxWidth / 3;
+  let partnerVectorCubeFifthPositionY = partnerBoxHeight - 1;
+
+  function movePartnerVectorCubeFifth() {
+    partnerVectorCubeFifthPositionX -= partnerVectorCubeFifthSpeedX;
+    partnerVectorCubeFifthPositionY -= partnerVectorCubeFifthSpeedY;
+
+    if (
+      partnerVectorCubeFifthPositionX >= partnerBoxWidth ||
+      partnerVectorCubeFifthPositionX <= 0
+    ) {
+      partnerVectorCubeFifthSpeedX *= -1;
+    }
+
+    if (
+      partnerVectorCubeFifthPositionY >= partnerBoxHeight ||
+      partnerVectorCubeFifthPositionY <= 0
+    ) {
+      partnerVectorCubeFifthSpeedY *= -1;
+    }
+
+    partnerVectorCubeFifth.style.left = partnerVectorCubeFifthPositionX + "px";
+    partnerVectorCubeFifth.style.top = partnerVectorCubeFifthPositionY + "px";
+
+    requestAnimationFrame(movePartnerVectorCubeFifth);
+  }
+  movePartnerVectorCubeFifth();
 });
